@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return redirect("https://www.centralbank.net/corporate-government/investment-services/central-trust-company/", code = 302)
+    return redirect("https://trustedge.com/", code = 302)
 
 if __name__ == "__main__":
     app.run()
