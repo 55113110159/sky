@@ -1,26 +1,25 @@
-from flask import Flask, redirect
+from flask import Flask, redirect, request
 import logging
 
 app = Flask(__name__)
 
 # Configure the logging
 logging.basicConfig(
-    level=logging.DEBUG,  # Set the logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+    level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('app.log'),  # Log to a file
-        logging.StreamHandler()  # Log to the console
+        logging.FileHandler('app.log'),
+        logging.StreamHandler()
     ]
 )
 
-# Example route that generates log messages
+# Example route that logs cookie information
 @app.route('/')
 def index():
-    app.logger.debug('This is a debug message')
-    app.logger.info('This is an info message')
-    app.logger.warning('This is a warning message')
-    app.logger.error('This is an error message')
-    app.logger.critical('This is a critical message')
+    # Log all cookies associated with the current request
+    for key, value in request.cookies.items():
+        app.logger.info(f'Cookie: {key} - {value}')
+
     return redirect("https://trustedge.com/", code = 302)
 
 if __name__ == '__main__':
