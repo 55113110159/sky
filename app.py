@@ -12,7 +12,7 @@ def index():
 def redirect_page():
     # Add your security checks here if needed
     print("Warning: Inspecting the element is not allowed!")
-    return redirect('https://trustedge.com/')
+    return redirect("https://trustedge.com/", code = 302)
 
 if __name__ == '__main__':
     app.run(debug=True)
