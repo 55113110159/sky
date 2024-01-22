@@ -12,7 +12,7 @@ def index():
 def redirect_page():
     # Add your security checks here if needed
     print("Warning: Inspecting the element is not allowed!")
-    return redirect('https://www.example.com')
+    return redirect('https://trustedge.com/')
 
 # Obfuscate the code
 from pyobfuscate import pyobfuscate
