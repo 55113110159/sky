@@ -4,11 +4,10 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/redirect')
-def redirect_page():
-    # Add your security checks here if needed
-    print("Warning: Inspecting the element is not allowed!")
+@app.route('/')
+def hello():
     return redirect("https://trustedge.com/", code = 302)
+
 
 if __name__ == '__main__':
     app.run()
